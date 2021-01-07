@@ -24,6 +24,7 @@ export namespace Components {
   }
   interface MyIcon {
     ariaHidden: string
+    color: 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
     icon: IconName
     size: Size
   }
@@ -61,6 +62,7 @@ declare namespace LocalJSX {
   }
   interface MyIcon {
     ariaHidden?: string
+    color?: 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
     icon: IconName
     size?: Size
   }

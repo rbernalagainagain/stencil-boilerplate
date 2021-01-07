@@ -7,4 +7,5 @@ export const Icons = {
   'ELLIPSIS-HORIZONTAL-OUTLINE': 'ellipsis-horizontal-outline.svg',
   'ELLIPSIS-VERTICAL': 'ellipsis-vertical.svg',
   'ELLIPSIS-VERTICAL-OUTLINE': 'ellipsis-vertical-outline.svg',
+  'ALERT-CIRCLE-OUTLINE': 'alert-circle-outline.svg',
 }

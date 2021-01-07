@@ -1,2 +1,27 @@
 :root {
+  /* Palette */
+  --background-color: white;
+  --on-background-color: hsl(159, 82%, 64%);
+
+  --on-primary-color: white;
+  --primary-color: hsl(159, 82%, 64%);
+
+  --on-secondary-color: white;
+  --secondary-color: hsl(19, 94%, 82%);
+
+  --on-tertiary-color: white;
+  --tertiary-color: hsl(238, 21%, 66%);
+
+  /* Status colors */
+  --error-color: hsl(350, 100%, 57%);
+  --on-error-color: white;
+
+  --warning-color: hsl(39, 100%, 47%);
+  --on-warning-color: white;
+
+  --information-color: hsl(201, 29%, 56%);
+  --on-information-color: white;
+
+  --success-color: hsl(61, 90%, 36%);
+  --on-success-color: white;
 }

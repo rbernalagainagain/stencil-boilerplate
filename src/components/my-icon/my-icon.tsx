@@ -25,11 +25,13 @@ export class MyIcon {
   })
   ariaHidden = 'true'
 
+  @Prop() color: 'PRIMARY' | 'SECONDARY' | 'TERTIARY' = 'PRIMARY'
+
   async componentWillLoad() {
-    this.svgContent = await getSVG(`./svg/${Icons[this.icon]}`)
+    this.svgContent = await getSVG(`./svg/${Icons[this.icon ?? 'ALERT-CIRCLE-OUTLINE']}`)
   }
 
-  get setIconSize(): string {
+  get iconSize(): string {
     if (this.size !== 'MEDIUM') {
       return this.size === 'SMALL' ? 'small' : 'large'
     }
@@ -37,10 +39,18 @@ export class MyIcon {
     return 'medium'
   }
 
+  get styleColor(): string {
+    if (this.color !== 'PRIMARY') {
+      return this.color === 'SECONDARY' ? 'secondary' : 'tertiary'
+    }
+
+    return 'primary'
+  }
+
   render() {
     return (
-      <Host class={{ [this.setIconSize]: true }}>
-        <div innerHTML={this.svgContent} />
+      <Host class={{ [this.iconSize]: true }}>
+        <div class={{ 'svg-box': true, [this.styleColor]: true }} innerHTML={this.svgContent} />
       </Host>
     )
   }

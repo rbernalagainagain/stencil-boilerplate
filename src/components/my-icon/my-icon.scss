@@ -1,7 +1,6 @@
 :host {
   display: inline-flex;
   margin: auto;
-  background-size: cover;
   padding: 0; /* reset */
 }
 
@@ -18,4 +17,24 @@
 :host(.large) {
   width: 42px;
   height: 42px;
+}
+
+.svg-box {
+  &.primary svg {
+    color: var(--primary-color);
+    stroke: var(--primary-color);
+    fill: var(--primary-color);
+  }
+
+  &.secondary svg {
+    color: var(--secondary-color);
+    stroke: var(--secondary-color);
+    fill: var(--secondary-color);
+  }
+
+  &.tertiary svg {
+    color: var(--tertiary-color);
+    stroke: var(--tertiary-color);
+    fill: var(--tertiary-color);
+  }
 }
