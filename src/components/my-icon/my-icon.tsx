@@ -23,7 +23,7 @@ export class MyIcon {
   @Prop({
     reflect: true,
   })
-  ariaHidden: string = 'true'
+  ariaHidden = 'true'
 
   async componentWillLoad() {
     this.svgContent = await getSVG(`./assets/${Icons[this.icon]}`)
