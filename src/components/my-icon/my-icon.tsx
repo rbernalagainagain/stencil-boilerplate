@@ -26,7 +26,7 @@ export class MyIcon {
   ariaHidden = 'true'
 
   async componentWillLoad() {
-    this.svgContent = await getSVG(`./assets/${Icons[this.icon]}`)
+    this.svgContent = await getSVG(`./svg/${Icons[this.icon]}`)
   }
 
   get setIconSize(): string {
