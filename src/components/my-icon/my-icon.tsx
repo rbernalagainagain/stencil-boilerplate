@@ -18,7 +18,7 @@ export class MyIcon {
   })
   icon!: IconName
 
-  @Prop() size: Size = 'MEDIUM'
+  @Prop() size: Size = 'SMALL'
 
   @Prop({
     reflect: true,
@@ -28,7 +28,7 @@ export class MyIcon {
   @Prop() color: 'PRIMARY' | 'SECONDARY' | 'TERTIARY' = 'PRIMARY'
 
   async componentWillLoad() {
-    this.svgContent = await getSVG(`./svg/${Icons[this.icon ?? 'ALERT-CIRCLE-OUTLINE']}`)
+    this.svgContent = await getSVG(`./svg/${Icons[this.icon]}`)
   }
 
   get iconSize(): string {
@@ -50,7 +50,11 @@ export class MyIcon {
   render() {
     return (
       <Host class={{ [this.iconSize]: true }}>
-        <div class={{ 'svg-box': true, [this.styleColor]: true }} innerHTML={this.svgContent} />
+        {this.icon ? (
+          <div class={{ 'svg-box': true, [this.styleColor]: true }} innerHTML={this.svgContent} />
+        ) : (
+          <div class={{ 'svg-box': true, [this.styleColor]: true }} />
+        )}
       </Host>
     )
   }

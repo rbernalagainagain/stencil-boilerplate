@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal'
 import { IconName } from './components/my-icon/types/icon-name'
 import { Size } from './components/my-icon/types/size'
 export namespace Components {
+  interface MyCard {}
   interface MyComponent {
     /**
      * The first name
@@ -30,6 +31,11 @@ export namespace Components {
   }
 }
 declare global {
+  interface HTMLMyCardElement extends Components.MyCard, HTMLStencilElement {}
+  var HTMLMyCardElement: {
+    prototype: HTMLMyCardElement
+    new (): HTMLMyCardElement
+  }
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement
@@ -41,11 +47,13 @@ declare global {
     new (): HTMLMyIconElement
   }
   interface HTMLElementTagNameMap {
+    'my-card': HTMLMyCardElement
     'my-component': HTMLMyComponentElement
     'my-icon': HTMLMyIconElement
   }
 }
 declare namespace LocalJSX {
+  interface MyCard {}
   interface MyComponent {
     /**
      * The first name
@@ -67,6 +75,7 @@ declare namespace LocalJSX {
     size?: Size
   }
   interface IntrinsicElements {
+    'my-card': MyCard
     'my-component': MyComponent
     'my-icon': MyIcon
   }
@@ -75,6 +84,7 @@ export { LocalJSX as JSX }
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
+      'my-card': LocalJSX.MyCard & JSXBase.HTMLAttributes<HTMLMyCardElement>
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>
       'my-icon': LocalJSX.MyIcon & JSXBase.HTMLAttributes<HTMLMyIconElement>
     }
