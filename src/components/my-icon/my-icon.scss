@@ -1,20 +1,21 @@
 :host {
-  display: block;
+  display: inline-flex;
+  margin: auto;
+  background-size: cover;
+  padding: 0; /* reset */
 }
 
-img {
-  &.small {
-    width: 26px;
-    height: 26px;
-  }
+:host(.small) {
+  width: 26px;
+  height: 26px;
+}
 
-  &.medium {
-    width: 34px;
-    height: 34px;
-  }
+:host(.medium) {
+  width: 34px;
+  height: 34px;
+}
 
-  &.large {
-    width: 42px;
-    height: 42px;
-  }
+:host(.large) {
+  width: 42px;
+  height: 42px;
 }
