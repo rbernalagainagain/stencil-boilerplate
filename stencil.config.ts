@@ -1,8 +1,10 @@
 import { Config } from '@stencil/core'
+import { sass } from '@stencil/sass'
 
 export const config: Config = {
   namespace: 'stencil-boilerplate',
   globalStyle: 'src/global/theme.css',
+  plugins: [sass()],
   outputTargets: [
     {
       type: 'dist',

@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal'
+import { IconName } from './components/my-icon/types/iconName'
+import { Size } from './components/my-icon/types/size'
 export namespace Components {
   interface MyComponent {
     /**
@@ -20,7 +22,10 @@ export namespace Components {
      */
     middle: string
   }
-  interface MyIcon {}
+  interface MyIcon {
+    icon: IconName
+    size: Size
+  }
 }
 declare global {
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
@@ -53,7 +58,10 @@ declare namespace LocalJSX {
      */
     middle?: string
   }
-  interface MyIcon {}
+  interface MyIcon {
+    icon: IconName
+    size?: Size
+  }
   interface IntrinsicElements {
     'my-component': MyComponent
     'my-icon': MyIcon

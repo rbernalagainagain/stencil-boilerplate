@@ -30,6 +30,7 @@
   "license": "MIT",
   "devDependencies": {
     "@stencil/eslint-plugin": "^0.3.1",
+    "@stencil/sass": "^1.4.1",
     "@types/jest": "^26.0.15",
     "@types/puppeteer": "^5.4.0",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
