@@ -20,6 +20,7 @@ export namespace Components {
      */
     middle: string
   }
+  interface MyIcon {}
 }
 declare global {
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
@@ -27,8 +28,14 @@ declare global {
     prototype: HTMLMyComponentElement
     new (): HTMLMyComponentElement
   }
+  interface HTMLMyIconElement extends Components.MyIcon, HTMLStencilElement {}
+  var HTMLMyIconElement: {
+    prototype: HTMLMyIconElement
+    new (): HTMLMyIconElement
+  }
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'my-icon': HTMLMyIconElement
   }
 }
 declare namespace LocalJSX {
@@ -46,8 +53,10 @@ declare namespace LocalJSX {
      */
     middle?: string
   }
+  interface MyIcon {}
   interface IntrinsicElements {
     'my-component': MyComponent
+    'my-icon': MyIcon
   }
 }
 export { LocalJSX as JSX }
@@ -55,6 +64,7 @@ declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>
+      'my-icon': LocalJSX.MyIcon & JSXBase.HTMLAttributes<HTMLMyIconElement>
     }
   }
 }

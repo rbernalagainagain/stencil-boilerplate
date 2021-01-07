@@ -1,7 +1,8 @@
-import { Config } from '@stencil/core';
+import { Config } from '@stencil/core'
 
 export const config: Config = {
   namespace: 'stencil-boilerplate',
+  globalStyle: 'src/global/theme.css',
   outputTargets: [
     {
       type: 'dist',
@@ -18,4 +19,4 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-};
+}
