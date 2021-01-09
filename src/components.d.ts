@@ -5,10 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal'
+import { Size } from './types/size'
 import { IconName } from './components/my-icon/types/icon-name'
-import { Size } from './components/my-icon/types/size'
 export namespace Components {
-  interface MyCard {}
+  interface MyButton {
+    isDisabled: boolean
+    size: Size
+  }
   interface MyComponent {
     /**
      * The first name
@@ -31,10 +34,10 @@ export namespace Components {
   }
 }
 declare global {
-  interface HTMLMyCardElement extends Components.MyCard, HTMLStencilElement {}
-  var HTMLMyCardElement: {
-    prototype: HTMLMyCardElement
-    new (): HTMLMyCardElement
+  interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {}
+  var HTMLMyButtonElement: {
+    prototype: HTMLMyButtonElement
+    new (): HTMLMyButtonElement
   }
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
@@ -47,13 +50,16 @@ declare global {
     new (): HTMLMyIconElement
   }
   interface HTMLElementTagNameMap {
-    'my-card': HTMLMyCardElement
+    'my-button': HTMLMyButtonElement
     'my-component': HTMLMyComponentElement
     'my-icon': HTMLMyIconElement
   }
 }
 declare namespace LocalJSX {
-  interface MyCard {}
+  interface MyButton {
+    isDisabled?: boolean
+    size?: Size
+  }
   interface MyComponent {
     /**
      * The first name
@@ -75,7 +81,7 @@ declare namespace LocalJSX {
     size?: Size
   }
   interface IntrinsicElements {
-    'my-card': MyCard
+    'my-button': MyButton
     'my-component': MyComponent
     'my-icon': MyIcon
   }
@@ -84,7 +90,7 @@ export { LocalJSX as JSX }
 declare module '@stencil/core' {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-card': LocalJSX.MyCard & JSXBase.HTMLAttributes<HTMLMyCardElement>
+      'my-button': LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>
       'my-icon': LocalJSX.MyIcon & JSXBase.HTMLAttributes<HTMLMyIconElement>
     }

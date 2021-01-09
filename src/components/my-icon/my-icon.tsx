@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop } from '@stencil/core'
-import { Size } from './types/size'
+import { Size } from '../../types/size'
 import { Icons } from './types/icons'
 import { IconName } from './types/icon-name'
 import { getSVG } from '../../utils/utils'
@@ -39,21 +39,13 @@ export class MyIcon {
     return 'medium'
   }
 
-  get styleColor(): string {
-    if (this.color !== 'PRIMARY') {
-      return this.color === 'SECONDARY' ? 'secondary' : 'tertiary'
-    }
-
-    return 'primary'
-  }
-
   render() {
     return (
       <Host class={{ [this.iconSize]: true }}>
         {this.icon ? (
-          <div class={{ 'svg-box': true, [this.styleColor]: true }} innerHTML={this.svgContent} />
+          <div class={{ 'svg-box': true }} innerHTML={this.svgContent} />
         ) : (
-          <div class={{ 'svg-box': true, [this.styleColor]: true }} />
+          <div class={{ 'svg-box': true }} />
         )}
       </Host>
     )

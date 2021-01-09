@@ -1,7 +1,16 @@
 :root {
+  /* Spacing */
+  --unit: 0.5rem;
+  --extra-small: calc(var(--unit) * 1);
+  --small: calc(var(--unit) * 1.5);
+  --medium: calc(var(--unit) * 3);
+  --big: calc(var(--unit) * 4);
+  --large: calc(var(--unit) * 5);
+  --extra-large: calc(var(--unit) * 6);
+
   /* Palette */
-  --background-color: white;
-  --on-background-color: hsl(159, 82%, 64%);
+  --background-color: hsl(159, 82%, 64%);
+  --on-background-color: white;
 
   --on-primary-color: white;
   --primary-color: hsl(159, 82%, 64%);
@@ -24,4 +33,9 @@
 
   --success-color: hsl(61, 90%, 36%);
   --on-success-color: white;
+
+  /* Fonts */
+  --body-size: 1rem;
+  --subtitle-size: 11px;
+  --color: white;
 }

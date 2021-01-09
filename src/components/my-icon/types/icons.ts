@@ -8,4 +8,5 @@ export const Icons = {
   'ELLIPSIS-VERTICAL': 'ellipsis-vertical.svg',
   'ELLIPSIS-VERTICAL-OUTLINE': 'ellipsis-vertical-outline.svg',
   'ALERT-CIRCLE-OUTLINE': 'alert-circle-outline.svg',
+  'ARROW-FORWARD-OUTLINE': 'arrow-forward-outline.svg',
 }

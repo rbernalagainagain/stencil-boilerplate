@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { MyCard } from '../my-card';
+import { MyButton } from '../my-button';
 
-describe('my-card', () => {
+describe('my-button', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [MyCard],
-      html: `<my-card></my-card>`,
+      components: [MyButton],
+      html: `<my-button></my-button>`,
     });
     expect(page.root).toEqualHtml(`
-      <my-card>
+      <my-button>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </my-card>
+      </my-button>
     `);
   });
 });

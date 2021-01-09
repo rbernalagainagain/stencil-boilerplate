@@ -9,8 +9,34 @@
 
     <script type="module" src="/build/stencil-boilerplate.esm.js"></script>
     <script nomodule src="/build/stencil-boilerplate.js"></script>
+
+    <style>
+      html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--background-color);
+
+        height: 100vh;
+
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
-    <my-icon size="MEDIUM" name="EYE"></my-icon>
+    <my-button disabled>
+      <my-icon slot="end" size="MEDIUM" name="ARROW-FORWARD-OUTLINE"></my-icon>
+      Siguiente
+    </my-button>
+    <my-button>
+      <my-icon slot="end" size="MEDIUM" name="ARROW-FORWARD-OUTLINE"></my-icon>
+      Siguiente
+    </my-button>
+    <hr />
+    <my-button> Siguiente </my-button>
+    <hr />
+    <my-button size="SMALL">
+      <my-icon size="MEDIUM" name="EYE"></my-icon>
+    </my-button>
   </body>
 </html>
