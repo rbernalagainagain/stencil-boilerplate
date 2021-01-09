@@ -41,7 +41,7 @@ export class MyIcon {
 
   render() {
     return (
-      <Host class={{ [this.iconSize]: true }}>
+      <Host class={{ [this.iconSize]: true, 'icon': true }}>
         {this.icon ? (
           <div class={{ 'svg-box': true }} innerHTML={this.svgContent} />
         ) : (
