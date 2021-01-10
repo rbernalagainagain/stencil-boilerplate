@@ -13,21 +13,38 @@ import { getSVG } from '../../utils/utils'
 export class MyIcon {
   private svgContent!: string
 
+  /**
+   * The name specifies which icon to use from the list
+   */
   @Prop({
     attribute: 'name',
   })
   icon!: IconName
 
+  /**
+   * Specifies the default size of the icon
+   */
   @Prop() size: Size = 'SMALL'
 
+  /**
+   * Specifies the label to use for accessibility. Defaults to the icon name.
+   */
+  @Prop({ reflect: true }) ariaLabel?: string
+
+  /**
+   * Set the icon to hidden, respectively `true`, to remove it from the accessibility tree.
+   */
   @Prop({
     reflect: true,
   })
   ariaHidden = 'true'
 
+  /**
+   * Specifies which color default.
+   */
   @Prop() color: 'PRIMARY' | 'SECONDARY' | 'TERTIARY' = 'PRIMARY'
 
-  async componentWillLoad() {
+  async componentWillLoad(): Promise<void> {
     this.svgContent = await getSVG(`./svg/${Icons[this.icon]}`)
   }
 
@@ -41,11 +58,11 @@ export class MyIcon {
 
   render() {
     return (
-      <Host class={{ [this.iconSize]: true, 'icon': true }}>
+      <Host>
         {this.icon ? (
-          <div class={{ 'svg-box': true }} innerHTML={this.svgContent} />
+          <div class={{ box: true, [this.iconSize]: true }} innerHTML={this.svgContent} />
         ) : (
-          <div class={{ 'svg-box': true }} />
+          <div class={{ box: true }} />
         )}
       </Host>
     )

@@ -7,11 +7,15 @@ import { Size } from '../../types/size'
   shadow: true,
 })
 export class MyButton {
-  @Element() el!: HTMLMyButtonElement
+  @Element() self!: HTMLMyButtonElement
 
   @Prop({ attribute: 'disabled' }) isDisabled = false
 
   @Prop() size: Size = 'MEDIUM'
+
+  constructor() {
+    this.handleClick = this.handleClick.bind(this)
+  }
 
   get sizeButton(): string {
     if (this.size !== 'MEDIUM') {
@@ -22,8 +26,10 @@ export class MyButton {
   }
 
   render() {
+    this.isDisabledOnClick()
+
     return (
-      <Host tabIndex={0} disabled={this.isDisabled} role='button'>
+      <Host onClick={!this.isDisabled && this.handleClick}>
         <button tabIndex={-1} class={{ btn: true }} disabled={this.isDisabled}>
           <div class={{ value: true, [this.sizeButton]: true }}>
             <slot></slot>
@@ -32,5 +38,17 @@ export class MyButton {
         </button>
       </Host>
     )
+  }
+
+  private handleClick(e: Event): void {
+    e.preventDefault()
+
+    console.warn('Clicked button')
+  }
+
+  private isDisabledOnClick() {
+    if (this.isDisabled) {
+      this.self.onclick = null
+    }
   }
 }

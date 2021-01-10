@@ -27,9 +27,25 @@ export namespace Components {
     middle: string
   }
   interface MyIcon {
+    /**
+     * Set the icon to hidden, respectively `true`, to remove it from the accessibility tree.
+     */
     ariaHidden: string
+    /**
+     * Specifies the label to use for accessibility. Defaults to the icon name.
+     */
+    ariaLabel?: string
+    /**
+     * Specifies which color default.
+     */
     color: 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
+    /**
+     * The name specifies which icon to use from the list
+     */
     icon: IconName
+    /**
+     * Specifies the default size of the icon
+     */
     size: Size
   }
 }
@@ -75,9 +91,25 @@ declare namespace LocalJSX {
     middle?: string
   }
   interface MyIcon {
+    /**
+     * Set the icon to hidden, respectively `true`, to remove it from the accessibility tree.
+     */
     ariaHidden?: string
+    /**
+     * Specifies the label to use for accessibility. Defaults to the icon name.
+     */
+    ariaLabel?: string
+    /**
+     * Specifies which color default.
+     */
     color?: 'PRIMARY' | 'SECONDARY' | 'TERTIARY'
+    /**
+     * The name specifies which icon to use from the list
+     */
     icon: IconName
+    /**
+     * Specifies the default size of the icon
+     */
     size?: Size
   }
   interface IntrinsicElements {

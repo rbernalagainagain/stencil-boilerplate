@@ -22,9 +22,14 @@
         border: 1px solid black;
       }
     </style>
+    <script>
+      function greet() {
+        console.log('greet')
+      }
+    </script>
   </head>
   <body>
-    <my-button disabled>
+    <my-button onclick="greet()" disabled>
       <my-icon slot="end" size="MEDIUM" name="ARROW-FORWARD-OUTLINE"></my-icon>
       Siguiente
     </my-button>
@@ -36,7 +41,7 @@
     <my-button> Siguiente </my-button>
     <hr />
     <my-button size="SMALL">
-      <my-icon size="SMALL" name="EYE"></my-icon>
+      <my-icon size="LARGE" name="EYE"></my-icon>
     </my-button>
   </body>
 </html>
