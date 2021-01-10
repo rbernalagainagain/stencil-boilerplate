@@ -4,10 +4,10 @@
 
 ## Properties
 
-| Property     | Attribute  | Description | Type                             | Default    |
-| ------------ | ---------- | ----------- | -------------------------------- | ---------- |
-| `isDisabled` | `disabled` |             | `boolean`                        | `false`    |
-| `size`       | `size`     |             | `"LARGE" \| "MEDIUM" \| "SMALL"` | `'MEDIUM'` |
+| Property     | Attribute  | Description                                    | Type                             | Default    |
+| ------------ | ---------- | ---------------------------------------------- | -------------------------------- | ---------- |
+| `isDisabled` | `disabled` | Specifies if disabled button. Default is false | `boolean`                        | `false`    |
+| `size`       | `size`     | Specifies the default size of button           | `"LARGE" \| "MEDIUM" \| "SMALL"` | `'MEDIUM'` |
 
 ---
 

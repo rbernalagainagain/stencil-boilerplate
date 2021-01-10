@@ -12,6 +12,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "@stencil/decorators-style": ["warn", { "prop": "ignore", "method": "ignore" }]
+    "@stencil/decorators-style": ["warn", { "prop": "ignore", "method": "ignore" }],
+    "@stencil/strict-mutable": "off"
   }
 }

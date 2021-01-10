@@ -9,7 +9,17 @@ import { Size } from './types/size'
 import { IconName } from './components/my-icon/types/icon-name'
 export namespace Components {
   interface MyButton {
+    /**
+     * Specifies if disabled button. Default is false
+     */
     isDisabled: boolean
+    /**
+     * Set the role, respectively `button`
+     */
+    role: string
+    /**
+     * Specifies the default size of button
+     */
     size: Size
   }
   interface MyComponent {
@@ -73,7 +83,17 @@ declare global {
 }
 declare namespace LocalJSX {
   interface MyButton {
+    /**
+     * Specifies if disabled button. Default is false
+     */
     isDisabled?: boolean
+    /**
+     * Set the role, respectively `button`
+     */
+    role?: string
+    /**
+     * Specifies the default size of button
+     */
     size?: Size
   }
   interface MyComponent {

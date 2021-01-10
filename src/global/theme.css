@@ -9,7 +9,7 @@
   --extra-large: calc(var(--unit) * 6);
 
   /* Palette */
-  --background-color: hsl(159, 82%, 64%);
+  --background-button: hsl(159, 82%, 64%);
   --on-background-color: white;
 
   --on-primary-color: white;
@@ -33,6 +33,9 @@
 
   --success-color: hsl(61, 90%, 36%);
   --on-success-color: white;
+
+  --disabled-color: hsl(0, 0%, 72%);
+  --on-disabled-color: hsl(0, 0%, 90%);
 
   /* Fonts */
   --body-size: 1rem;

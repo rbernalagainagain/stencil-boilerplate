@@ -1,5 +1,6 @@
 import { Component, Element, h, Host, Prop } from '@stencil/core'
 import { Size } from '../../types/size'
+import { toString } from '../../utils/utils'
 
 @Component({
   tag: 'my-button',
@@ -9,9 +10,20 @@ import { Size } from '../../types/size'
 export class MyButton {
   @Element() self!: HTMLMyButtonElement
 
-  @Prop({ attribute: 'disabled' }) isDisabled = false
+  /**
+   * Specifies if disabled button. Default is false
+   */
+  @Prop({ attribute: 'disabled', mutable: true }) isDisabled = false
 
+  /**
+   * Specifies the default size of button
+   */
   @Prop() size: Size = 'MEDIUM'
+
+  /**
+   * Set the role, respectively `button`
+   */
+  @Prop({ reflect: true }) role = 'button'
 
   constructor() {
     this.handleClick = this.handleClick.bind(this)
@@ -29,10 +41,10 @@ export class MyButton {
     this.isDisabledOnClick()
 
     return (
-      <Host onClick={!this.isDisabled && this.handleClick}>
+      <Host aria-disabled={toString(this.isDisabled)} tabIndex={0} onClick={!this.isDisabled && this.handleClick}>
         <button tabIndex={-1} class={{ btn: true }} disabled={this.isDisabled}>
           <div class={{ value: true, [this.sizeButton]: true }}>
-            <slot></slot>
+            <slot />
           </div>
           <slot name='end'></slot>
         </button>
