@@ -29,8 +29,7 @@ export class FormPage {
           onSubmit={ev => {
             ev.preventDefault()
             console.log(ev)
-          }}
-        >
+          }}>
           {/*<input type={'text'} />*/}
           {/*<input type={'text'} />*/}
           {/*<my-input*/}
