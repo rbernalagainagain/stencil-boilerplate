@@ -2,7 +2,10 @@
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
     <title>Stencil Component Starter</title>
 
     <link rel="stylesheet" href="/build/stencil-boilerplate.css" />
@@ -11,37 +14,36 @@
     <script nomodule src="/build/stencil-boilerplate.js"></script>
 
     <style>
-      html {
+      body {
+        height: 100vh;
         display: flex;
+
+        padding: 0;
+        margin: 0;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-grow: 1;
         justify-content: center;
         align-items: center;
+
         background: var(--background-button);
-
-        height: 100vh;
-
-        border: 1px solid black;
+        color: var(--color);
       }
     </style>
-    <script>
-      function greet() {
-        console.log('greet')
-      }
-    </script>
   </head>
   <body>
-    <my-button onclick="greet()" disabled>
-      <my-icon slot="end" size="MEDIUM" name="ARROW-FORWARD-OUTLINE"></my-icon>
-      Siguiente
-    </my-button>
-    <my-button>
-      <my-icon slot="end" size="MEDIUM" name="ARROW-FORWARD-OUTLINE"></my-icon>
-      Siguiente
-    </my-button>
-    <hr />
-    <my-button> Siguiente </my-button>
-    <hr />
-    <my-button size="SMALL">
-      <my-icon size="LARGE" name="EYE"></my-icon>
-    </my-button>
+    <!--    <hr />-->
+
+    <div class="wrapper">
+        <form-page></form-page>
+<!--      <my-button>-->
+<!--        SEND-->
+<!--        <my-icon slot="end" name="ARROW-FORWARD-OUTLINE"></my-icon>-->
+<!--      </my-button>-->
+
+<!--      <my-icon size="small" name="ARROW-FORWARD-OUTLINE"></my-icon>-->
+    </div>
   </body>
 </html>

@@ -22,7 +22,7 @@ export class MyIcon {
   icon!: IconName
 
   /**
-   * Specifies the default size of the icon
+   * Specifies the default size `SMALL | MEDIUM | LARGE` of the icon. MEDIUM is default
    */
   @Prop() size: Size = 'SMALL'
 
@@ -39,28 +39,26 @@ export class MyIcon {
   })
   ariaHidden = 'true'
 
-  /**
-   * Specifies which color default.
-   */
-  @Prop() color: 'PRIMARY' | 'SECONDARY' | 'TERTIARY' = 'PRIMARY'
-
   async componentWillLoad(): Promise<void> {
     this.svgContent = await getSVG(`./svg/${Icons[this.icon]}`)
   }
 
   get iconSize(): string {
-    if (this.size !== 'MEDIUM') {
-      return this.size === 'SMALL' ? 'small' : 'large'
+    if (this.size.toUpperCase() !== 'SMALL') {
+      return this.size === 'MEDIUM' ? 'medium' : 'large'
     }
 
-    return 'medium'
+    return 'small'
   }
 
   render() {
     return (
       <Host>
-        {this.icon ? (
-          <div class={{ box: true, [this.iconSize]: true }} innerHTML={this.svgContent} />
+        {this.icon !== undefined ? (
+          <div
+            class={{ box: true, [this.iconSize]: this.size !== undefined }}
+            innerHTML={this.svgContent}
+          />
         ) : (
           <div class={{ box: true }} />
         )}

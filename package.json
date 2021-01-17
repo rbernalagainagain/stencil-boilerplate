@@ -48,13 +48,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "npm run format",
       "pre-push": "npm run lint"
     }
-  },
-  "lint-staged": {
-    "*.{ts,css,html,json,js,scss,md}": [
-      "npm run format"
-    ]
   }
 }

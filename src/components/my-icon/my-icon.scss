@@ -9,23 +9,26 @@
 }
 
 .box {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: auto;
+
   &.small {
-    width: 26px;
-    height: 26px;
+    width: var(--small);
   }
 
   &.medium {
-    width: 34px;
-    height: 34px;
+    width: var(--medium);
   }
 
   &.large {
-    width: 42px;
-    height: 42px;
+    width: var(--big);
   }
 }
 
 svg {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: auto;
 }

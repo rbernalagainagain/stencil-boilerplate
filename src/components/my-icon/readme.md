@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property            | Attribute     | Description                                                                            | Type                                                                                                                                                                                                                                        | Default     |
@@ -12,6 +13,7 @@
 | `icon` _(required)_ | `name`        | The name specifies which icon to use from the list                                     | `"ACCESSIBILITY" \| "ACCESSIBILITY-OUTLINE" \| "ALERT-CIRCLE-OUTLINE" \| "ARROW-FORWARD-OUTLINE" \| "ELLIPSIS-HORIZONTAL" \| "ELLIPSIS-HORIZONTAL-OUTLINE" \| "ELLIPSIS-VERTICAL" \| "ELLIPSIS-VERTICAL-OUTLINE" \| "EYE" \| "EYE-OUTLINE"` | `undefined` |
 | `size`              | `size`        | Specifies the default size of the icon                                                 | `"LARGE" \| "MEDIUM" \| "SMALL"`                                                                                                                                                                                                            | `'SMALL'`   |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
