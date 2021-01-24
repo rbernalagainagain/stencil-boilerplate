@@ -33,17 +33,13 @@
         background: var(--background-button);
         color: var(--color);
       }
-
-      p {
-        text-transform: uppercase;
-        height: 1rem;
-      }
     </style>
   </head>
   <body>
     <div id="root" class="wrapper">
-      <my-input-password placeholder="Password"></my-input-password>
-      <p id="message"></p>
+      <my-input-password placeholder="Password">
+        <p id="message"></p>
+      </my-input-password>
     </div>
 
     <script>

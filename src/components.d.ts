@@ -75,6 +75,7 @@ export namespace Components {
         "getValue": () => Promise<boolean>;
         "isPasswordVisible": boolean;
         "placeholder"?: string;
+        "value"?: string;
     }
     interface MyModal {
         /**
@@ -209,6 +210,7 @@ declare namespace LocalJSX {
         "isPasswordVisible"?: boolean;
         "onShowPassword"?: (event: CustomEvent<boolean>) => void;
         "placeholder"?: string;
+        "value"?: string;
     }
     interface MyModal {
         /**
