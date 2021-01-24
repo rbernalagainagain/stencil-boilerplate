@@ -19,9 +19,6 @@ import { toString } from '../../utils/utils'
 export class MyButton {
   @Element() self!: HTMLMyButtonElement
 
-  /**
-   * Specifies if disabled button. Default is false
-   */
   @Prop({ attribute: 'disabled', mutable: true }) isDisabled = false
 
   /**

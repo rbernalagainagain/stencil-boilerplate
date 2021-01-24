@@ -17,6 +17,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "@stencil/required-jsdoc": "error",
     "@stencil/decorators-style": [
       "warn",
       { "prop": "ignore", "method": "ignore" }

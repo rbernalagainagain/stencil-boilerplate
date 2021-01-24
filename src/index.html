@@ -23,27 +23,45 @@
       }
 
       .wrapper {
-        display: flex;
         flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
         background: var(--background-button);
         color: var(--color);
       }
+
+      p {
+        text-transform: uppercase;
+        height: 1rem;
+      }
     </style>
   </head>
   <body>
-    <!--    <hr />-->
-
-    <div class="wrapper">
-      <form-page></form-page>
-      <!--      <my-button>-->
-      <!--        SEND-->
-      <!--        <my-icon slot="end" name="ARROW-FORWARD-OUTLINE"></my-icon>-->
-      <!--      </my-button>-->
-
-      <!--      <my-icon size="small" name="ARROW-FORWARD-OUTLINE"></my-icon>-->
+    <div id="root" class="wrapper">
+      <my-input-password placeholder="Password"></my-input-password>
+      <p id="message"></p>
     </div>
+
+    <script>
+      async function loadCustomElements() {
+        await customElements.whenDefined('my-input-password')
+        wrapper.getValue().then(console.log)
+      }
+
+      const wrapper = document.querySelector('my-input-password')
+      const message = document.getElementById('message')
+
+      wrapper.addEventListener('showPassword', ({ detail: isOpenEye }) => {
+        return (message.innerText = isOpenEye
+          ? 'attention! Your password is visible'
+          : '')
+      })
+
+      loadCustomElements()
+    </script>
   </body>
 </html>
