@@ -11,6 +11,7 @@
 | ------------------- | ------------- | ----------- | --------- | ----------- |
 | `isPasswordVisible` | `visible`     |             | `boolean` | `false`     |
 | `placeholder`       | `placeholder` |             | `string`  | `undefined` |
+| `value`             | `value`       |             | `string`  | `undefined` |
 
 
 ## Events

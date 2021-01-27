@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass'
 
 export const config: Config = {
   namespace: 'stencil-boilerplate',
+  bundles: [{ components: ['my-icon', 'my-input-password'] }],
   globalStyle: 'src/global/theme.css',
   plugins: [sass()],
   outputTargets: [
